@@ -21,16 +21,16 @@ export default async function ArticlesPage() {
 
   return (
     <div>
-      <h1 className="text-3xl font-bold mb-6">Articles</h1>
-      <div className="grid grid-cols-1 gap-4">
+      <h1 className="text-3xl font-bold mb-6 text-brand-dark">Articles</h1>
+      <div className="grid grid-cols-1 md-screen:grid-cols-2 lg-screen:grid-cols-3 gap-4">
         {displayedPosts.map((post) => (
           <Link
             key={post.id}
             href={`/articles/${post.id}`}
             className="block no-underline"
           >
-            <div className="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
-              <span className="text-xs text-blue-600 font-semibold uppercase">
+            <div className="border border-gray-200 rounded-xl p-4 hover:shadow-lg transition-shadow bg-white">
+              <span className="text-xs text-brand font-semibold uppercase tracking-wide">
                 Post #{post.id}
               </span>
               <h2 className="text-lg font-semibold mt-1 mb-2 text-gray-900 capitalize">

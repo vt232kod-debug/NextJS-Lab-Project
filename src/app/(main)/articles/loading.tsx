@@ -2,7 +2,7 @@ export default function ArticlesLoading() {
   return (
     <div>
       <div className="h-9 w-40 bg-gray-200 rounded mb-6 animate-pulse" />
-      <div className="grid grid-cols-1 gap-4">
+      <div className="grid grid-cols-1 md-screen:grid-cols-2 lg-screen:grid-cols-3 gap-4">
         {Array.from({ length: 6 }).map((_, i) => (
           <div
             key={i}

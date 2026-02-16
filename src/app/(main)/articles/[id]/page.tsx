@@ -47,12 +47,12 @@ export default async function ArticlePage({
     <div className="max-w-3xl mx-auto">
       <Link
         href="/articles"
-        className="text-blue-600 hover:underline mb-4 inline-block"
+        className="text-brand hover:underline mb-4 inline-block"
       >
         ← Back to Articles
       </Link>
-      <article className="bg-white rounded-lg p-6 shadow-sm border border-gray-200 mb-8">
-        <span className="text-xs text-blue-600 font-semibold uppercase">
+      <article className="bg-white rounded-xl p-6 shadow-sm border border-gray-200 mb-8">
+        <span className="text-xs text-brand font-semibold uppercase tracking-wide">
           Post #{post.id} · User #{post.userId}
         </span>
         <h1 className="text-3xl font-bold mt-2 mb-4 capitalize text-gray-900">

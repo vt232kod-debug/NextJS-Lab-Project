@@ -13,6 +13,23 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* Custom brand colors */
+  --color-brand: #3182ce;
+  --color-brand-dark: #1a365d;
+  --color-brand-light: #ebf8ff;
+  --color-brand-hover: #2b6cb0;
+  --color-accent: #ed8936;
+  --color-accent-light: #feebc8;
+  --color-success: #38a169;
+  --color-danger: #e53e3e;
+
+  /* Custom breakpoints */
+  --breakpoint-xs: 480px;
+  --breakpoint-sm: 640px;
+  --breakpoint-md-screen: 768px;
+  --breakpoint-lg-screen: 1024px;
+  --breakpoint-xl-screen: 1280px;
 }
 
 @media (prefers-color-scheme: dark) {

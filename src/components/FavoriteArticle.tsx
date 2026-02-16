@@ -21,8 +21,8 @@ export default async function FavoriteArticle({ id }: { id: number }) {
 
   return (
     <Link href={`/articles/${post.id}`} className="block no-underline">
-      <div className="bg-white rounded-lg p-5 shadow border-l-4 border-blue-500 hover:shadow-md transition-shadow h-full">
-        <span className="text-xs text-blue-600 font-semibold uppercase">
+      <div className="bg-white rounded-xl p-5 shadow-md border-l-4 border-brand hover:shadow-lg transition-shadow h-full">
+        <span className="text-xs text-brand font-semibold uppercase tracking-wide">
           Favorite #{post.id}
         </span>
         <h3 className="text-lg font-bold mt-2 mb-3 capitalize text-gray-900 line-clamp-2">
