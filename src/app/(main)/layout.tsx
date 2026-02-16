@@ -1,4 +1,5 @@
 import Link from "next/link";
+import NavLink from "@/components/NavLink";
 
 export default function MainLayout({
   children,
@@ -14,28 +15,33 @@ export default function MainLayout({
           </Link>
           <ul className="flex gap-1 list-none m-0 p-0">
             <li>
-              <Link
+              <NavLink
                 href="/articles"
                 className="text-gray-300 hover:text-white px-3 py-2 rounded text-sm no-underline"
+                activeClassName="!text-white bg-blue-600"
               >
                 Articles
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link
+              <NavLink
                 href="/profile/settings"
                 className="text-gray-300 hover:text-white px-3 py-2 rounded text-sm no-underline"
+                activeClassName="!text-white bg-blue-600"
+                exact
               >
                 Settings
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link
+              <NavLink
                 href="/profile/security"
                 className="text-gray-300 hover:text-white px-3 py-2 rounded text-sm no-underline"
+                activeClassName="!text-white bg-blue-600"
+                exact
               >
                 Security
-              </Link>
+              </NavLink>
             </li>
           </ul>
         </nav>
