@@ -25,7 +25,7 @@ export default function NavLink({
   return (
     <Link
       href={href}
-      className={`${className} ${isActive ? activeClassName : ""}`}
+      className={`${className} ${isActive ? `active ${activeClassName}` : ""}`}
       aria-current={isActive ? "page" : undefined}
     >
       {children}

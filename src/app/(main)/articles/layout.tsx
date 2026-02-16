@@ -1,4 +1,5 @@
 import NavLink from "@/components/NavLink";
+import styles from "@/styles/menu.module.css";
 
 export default function ArticlesLayout({
   children,
@@ -7,39 +8,26 @@ export default function ArticlesLayout({
 }) {
   return (
     <div>
-      <nav className="bg-gray-100 rounded-lg p-1 mb-4">
-        <ul className="flex gap-1 list-none m-0 p-0">
+      <nav className={styles.subnav}>
+        <ul className={styles.submenu}>
           <li>
-            <NavLink
-              href="/articles"
-              className="text-gray-700 hover:bg-gray-200 px-4 py-2 rounded text-sm no-underline inline-block"
-              activeClassName="!bg-blue-600 !text-white"
-              exact
-            >
+            <NavLink href="/articles" className={styles.submenuLink} exact>
               All Articles
             </NavLink>
           </li>
           <li>
-            <NavLink
-              href="/articles/favorite"
-              className="text-gray-700 hover:bg-gray-200 px-4 py-2 rounded text-sm no-underline inline-block"
-              activeClassName="!bg-blue-600 !text-white"
-            >
+            <NavLink href="/articles/favorite" className={styles.submenuLink}>
               Favorites
             </NavLink>
           </li>
           <li>
-            <NavLink
-              href="/articles/create"
-              className="text-gray-700 hover:bg-gray-200 px-4 py-2 rounded text-sm no-underline inline-block"
-              activeClassName="!bg-blue-600 !text-white"
-            >
+            <NavLink href="/articles/create" className={styles.submenuLink}>
               Create
             </NavLink>
           </li>
         </ul>
       </nav>
-      <div>{children}</div>
+      <div className="mt-4">{children}</div>
     </div>
   );
 }
