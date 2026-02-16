@@ -10,7 +10,7 @@ interface Post {
 async function getPost(id: number): Promise<Post> {
   const res = await fetch(
     `https://jsonplaceholder.typicode.com/posts/${id}`,
-    { cache: "no-store" }
+    { cache: "force-cache" }
   );
   if (!res.ok) throw new Error("Failed to fetch post");
   return res.json();
