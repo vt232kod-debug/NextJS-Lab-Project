@@ -22,6 +22,11 @@ export default function MainLayout({
               </NavLink>
             </li>
             <li>
+              <NavLink href="/env" className={styles.menuLink} exact>
+                Env
+              </NavLink>
+            </li>
+            <li>
               <NavLink href="/profile/settings" className={styles.menuLink} exact>
                 Settings
               </NavLink>
