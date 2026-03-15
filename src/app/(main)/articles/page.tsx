@@ -1,43 +1,62 @@
+"use client";
+
+import useSWR from "swr";
 import Link from "next/link";
+import { Article } from "@/app/lib/definitions";
 
-interface Post {
-  userId: number;
-  id: number;
-  title: string;
-  body: string;
-}
+const fetcher = (url: string) => fetch(url).then((r) => r.json());
 
-async function getPosts(): Promise<Post[]> {
-  const res = await fetch("https://jsonplaceholder.typicode.com/posts", {
-    cache: "force-cache",
-  });
-  if (!res.ok) throw new Error("Failed to fetch posts");
-  return res.json();
-}
+export default function ArticlesPage() {
+  const { data: articles, error, isLoading } = useSWR<Article[]>(
+    "/api/articles",
+    fetcher
+  );
 
-export default async function ArticlesPage() {
-  const posts = await getPosts();
-  const displayedPosts = posts.slice(0, 20);
+  if (isLoading) {
+    return (
+      <div>
+        <h1 className="text-3xl font-bold mb-6 text-brand-dark">Articles</h1>
+        <p className="text-gray-500">Loading articles...</p>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div>
+        <h1 className="text-3xl font-bold mb-6 text-brand-dark">Articles</h1>
+        <p className="text-red-500">Failed to load articles.</p>
+      </div>
+    );
+  }
 
   return (
     <div>
-      <h1 className="text-3xl font-bold mb-6 text-brand-dark">Articles</h1>
+      <div className="flex items-center justify-between mb-6">
+        <h1 className="text-3xl font-bold text-brand-dark">Articles</h1>
+        <Link
+          href="/articles/create"
+          className="bg-brand text-white px-4 py-2 rounded-lg text-sm font-medium hover:opacity-90 transition-opacity"
+        >
+          + New Article
+        </Link>
+      </div>
       <div className="grid grid-cols-1 md-screen:grid-cols-2 lg-screen:grid-cols-3 gap-4">
-        {displayedPosts.map((post) => (
+        {articles?.map((article) => (
           <Link
-            key={post.id}
-            href={`/articles/${post.id}`}
+            key={article.id}
+            href={`/articles/${article.id}`}
             className="block no-underline"
           >
             <div className="border border-gray-200 rounded-xl p-4 hover:shadow-lg transition-shadow bg-white">
               <span className="text-xs text-brand font-semibold uppercase tracking-wide">
-                Post #{post.id}
+                Article #{article.id}
               </span>
               <h2 className="text-lg font-semibold mt-1 mb-2 text-gray-900 capitalize">
-                {post.title}
+                {article.title}
               </h2>
               <p className="text-sm text-gray-600 line-clamp-2">
-                {post.body}
+                {article.body}
               </p>
             </div>
           </Link>
