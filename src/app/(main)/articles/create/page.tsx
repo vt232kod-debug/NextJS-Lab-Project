@@ -39,14 +39,14 @@ export default function CreateArticlePage() {
 
   return (
     <div className="max-w-2xl mx-auto">
-      <h1 className="text-3xl font-bold mb-6 text-brand-dark">
+      <h1 className="text-3xl font-bold mb-6 text-white">
         Create Article
       </h1>
-      <Card className="shadow-sm">
+      <Card className="shadow-sm bg-[#3d352b] border-[#7a6b5a] text-white">
         <Card.Body>
           <Form onSubmit={handleSubmit}>
             {error && (
-              <div className="mb-3 text-sm text-red-600 bg-red-50 border border-red-200 rounded-lg p-3">
+              <div className="mb-3 text-sm text-red-400 bg-red-900/30 border border-red-800 rounded-lg p-3">
                 {error}
               </div>
             )}
@@ -71,7 +71,12 @@ export default function CreateArticlePage() {
                 required
               />
             </Form.Group>
-            <Button variant="primary" type="submit" disabled={loading}>
+            <Button
+              style={{ backgroundColor: '#e8883a', borderColor: '#e8883a' }}
+              type="submit"
+              disabled={loading}
+              className="hover:opacity-90 transition-all duration-300"
+            >
               {loading ? "Publishing..." : "Publish Article"}
             </Button>
           </Form>

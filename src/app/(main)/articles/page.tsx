@@ -15,8 +15,8 @@ export default function ArticlesPage() {
   if (isLoading) {
     return (
       <div>
-        <h1 className="text-3xl font-bold mb-6 text-brand-dark">Articles</h1>
-        <p className="text-gray-500">Loading articles...</p>
+        <h1 className="text-3xl font-bold mb-6 text-white">Articles</h1>
+        <p className="text-white/50">Loading articles...</p>
       </div>
     );
   }
@@ -24,7 +24,7 @@ export default function ArticlesPage() {
   if (error) {
     return (
       <div>
-        <h1 className="text-3xl font-bold mb-6 text-brand-dark">Articles</h1>
+        <h1 className="text-3xl font-bold mb-6 text-white">Articles</h1>
         <p className="text-red-500">Failed to load articles.</p>
       </div>
     );
@@ -33,10 +33,10 @@ export default function ArticlesPage() {
   return (
     <div>
       <div className="flex items-center justify-between mb-6">
-        <h1 className="text-3xl font-bold text-brand-dark">Articles</h1>
+        <h1 className="text-3xl font-bold text-white">Articles</h1>
         <Link
           href="/articles/create"
-          className="bg-brand text-white px-4 py-2 rounded-lg text-sm font-medium hover:opacity-90 transition-opacity"
+          className="bg-[#e8883a] text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-[#d4762e] transition-all duration-300 no-underline"
         >
           + New Article
         </Link>
@@ -48,14 +48,14 @@ export default function ArticlesPage() {
             href={`/articles/${article.id}`}
             className="block no-underline"
           >
-            <div className="border border-gray-200 rounded-xl p-4 hover:shadow-lg transition-shadow bg-white">
-              <span className="text-xs text-brand font-semibold uppercase tracking-wide">
+            <div className="border border-[#7a6b5a] rounded-xl p-4 hover:shadow-lg transition-all duration-300 bg-[#3d352b] hover:border-[#e8883a]">
+              <span className="text-xs text-[#e8883a] font-semibold uppercase tracking-wide">
                 Article #{article.id}
               </span>
-              <h2 className="text-lg font-semibold mt-1 mb-2 text-gray-900 capitalize">
+              <h2 className="text-lg font-semibold mt-1 mb-2 text-white capitalize">
                 {article.title}
               </h2>
-              <p className="text-sm text-gray-600 line-clamp-2">
+              <p className="text-sm text-white/60 line-clamp-2">
                 {article.body}
               </p>
             </div>

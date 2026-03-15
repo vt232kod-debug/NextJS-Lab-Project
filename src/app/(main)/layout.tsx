@@ -1,11 +1,15 @@
 import NavLink from "@/components/NavLink";
+import SignOutButton from "@/components/SignOutButton";
+import { auth } from "@/auth";
 import styles from "@/styles/menu.module.css";
 
-export default function MainLayout({
+export default async function MainLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const session = await auth();
+
   return (
     <div className="min-h-screen flex flex-col">
       <header className={styles.header}>
@@ -36,13 +40,31 @@ export default function MainLayout({
                 Security
               </NavLink>
             </li>
+            {session?.user ? (
+              <>
+                <li className="flex items-center">
+                  <span className="text-sm text-white/80 px-2">
+                    {session.user.name ?? session.user.email}
+                  </span>
+                </li>
+                <li className="flex items-center">
+                  <SignOutButton />
+                </li>
+              </>
+            ) : (
+              <li>
+                <NavLink href="/login" className={styles.menuLink} exact>
+                  Login
+                </NavLink>
+              </li>
+            )}
           </ul>
         </nav>
       </header>
       <main className="flex-1 max-w-5xl mx-auto w-full px-4 py-6">
         {children}
       </main>
-      <footer className="text-center py-4 text-sm text-gray-500 border-t border-gray-200">
+      <footer className="text-center py-4 text-sm text-white/40 border-t border-[#7a6b5a]">
         © 2026 Articles Hub
       </footer>
     </div>

@@ -25,14 +25,14 @@ export default function ArticlePage() {
   if (isLoading) {
     return (
       <div className="max-w-3xl mx-auto">
-        <Link href="/articles" className="text-brand hover:underline mb-4 inline-block">
+        <Link href="/articles" className="text-[#e8883a] hover:underline mb-4 inline-block">
           ← Back to Articles
         </Link>
-        <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200 animate-pulse">
-          <div className="h-4 w-24 bg-gray-200 rounded mb-4" />
-          <div className="h-8 w-3/4 bg-gray-200 rounded mb-4" />
-          <div className="h-4 w-full bg-gray-200 rounded mb-2" />
-          <div className="h-4 w-5/6 bg-gray-200 rounded" />
+        <div className="bg-[#3d352b] rounded-xl p-6 shadow-sm border border-[#7a6b5a] animate-pulse">
+          <div className="h-4 w-24 bg-[#6b5d4f] rounded mb-4" />
+          <div className="h-8 w-3/4 bg-[#6b5d4f] rounded mb-4" />
+          <div className="h-4 w-full bg-[#6b5d4f] rounded mb-2" />
+          <div className="h-4 w-5/6 bg-[#6b5d4f] rounded" />
         </div>
       </div>
     );
@@ -41,7 +41,7 @@ export default function ArticlePage() {
   if (error || !article) {
     return (
       <div className="max-w-3xl mx-auto">
-        <Link href="/articles" className="text-brand hover:underline mb-4 inline-block">
+        <Link href="/articles" className="text-[#e8883a] hover:underline mb-4 inline-block">
           ← Back to Articles
         </Link>
         <p className="text-red-500">Article not found.</p>
@@ -53,13 +53,13 @@ export default function ArticlePage() {
     <div className="max-w-3xl mx-auto">
       <Link
         href="/articles"
-        className="text-brand hover:underline mb-4 inline-block"
+        className="text-[#e8883a] hover:underline mb-4 inline-block"
       >
         ← Back to Articles
       </Link>
-      <article className="bg-white rounded-xl p-6 shadow-sm border border-gray-200 mb-8">
+      <article className="bg-[#3d352b] rounded-xl p-6 shadow-sm border border-[#7a6b5a] mb-8">
         <div className="flex items-start justify-between mb-2">
-          <span className="text-xs text-brand font-semibold uppercase tracking-wide">
+          <span className="text-xs text-[#e8883a] font-semibold uppercase tracking-wide">
             Article #{article.id} · User #{article.user_id}
           </span>
           <button
@@ -69,17 +69,16 @@ export default function ArticlePage() {
             Delete
           </button>
         </div>
-        <h1 className="text-3xl font-bold mt-2 mb-4 capitalize text-gray-900">
+        <h1 className="text-3xl font-bold mt-2 mb-4 capitalize text-white">
           {article.title}
         </h1>
-        <p className="text-gray-700 leading-relaxed whitespace-pre-line">
+        <p className="text-white/80 leading-relaxed whitespace-pre-line">
           {article.body}
         </p>
-        <p className="text-xs text-gray-400 mt-4">
+        <p className="text-xs text-white/40 mt-4">
           Created: {new Date(article.created_at).toLocaleString()}
         </p>
       </article>
     </div>
   );
 }
-

@@ -5,3 +5,12 @@ export type Article = {
   body: string;
   created_at: string;
 };
+
+export type User = {
+  id: number;
+  email: string;
+  name: string | null;
+  password: string | null;
+  image: string | null;
+  created_at: string;
+};

@@ -1,6 +1,6 @@
 .header {
-  background-color: var(--color-brand-dark, #1a365d);
-  border-bottom: 2px solid var(--color-brand, #3182ce);
+  background-color: #3d352b;
+  border-bottom: 2px solid #e8883a;
   position: sticky;
   top: 0;
   z-index: 50;
@@ -26,10 +26,11 @@
   font-weight: 700;
   text-decoration: none;
   letter-spacing: -0.025em;
+  transition: color 0.3s ease;
 }
 
 .logoLink:hover {
-  color: var(--color-brand-light, #bee3f8);
+  color: #e8883a;
   text-decoration: none;
 }
 
@@ -46,30 +47,29 @@
   color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
   padding: 0.5rem 1rem;
-  border-radius: var(--radius-md, 0.5rem);
+  border-radius: 0.5rem;
   font-size: 0.9rem;
   font-weight: 500;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
 }
 
 .menuLink:hover {
   color: white;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(232, 136, 58, 0.2);
   text-decoration: none;
 }
 
 .menuLink.active {
   color: white;
-  background-color: var(--color-brand, #3182ce);
+  background-color: #e8883a;
   font-weight: 600;
 }
 
-/* Articles sub-navigation */
 .subnav {
-  background-color: var(--color-brand-light, #ebf8ff);
-  border-radius: var(--radius-lg, 0.75rem);
+  background-color: #6b5d4f;
+  border-radius: 0.75rem;
   padding: 0.25rem;
-  border: 1px solid #d0e8f5;
+  border: 1px solid #7a6b5a;
 }
 
 .submenu {
@@ -82,27 +82,27 @@
 
 .submenuLink {
   display: inline-block;
-  color: var(--color-brand-dark, #1a365d);
+  color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
   padding: 0.5rem 1.25rem;
-  border-radius: var(--radius-md, 0.5rem);
+  border-radius: 0.5rem;
   font-size: 0.85rem;
   font-weight: 500;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
 }
 
 .submenuLink:hover {
-  background-color: rgba(49, 130, 206, 0.1);
+  background-color: rgba(232, 136, 58, 0.2);
+  color: white;
   text-decoration: none;
 }
 
 .submenuLink.active {
-  background-color: var(--color-brand, #3182ce);
+  background-color: #e8883a;
   color: white;
   font-weight: 600;
 }
 
-/* Responsive */
 @media (max-width: 640px) {
   .nav {
     flex-direction: column;
