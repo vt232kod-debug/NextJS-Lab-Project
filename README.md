@@ -352,7 +352,7 @@ jobs:
       - uses: actions/setup-node@v4
         with: { node-version: 20, cache: 'pnpm' }
       - run: pnpm install --frozen-lockfile
-      - run: pnpm test -- --coverage
+      - run: pnpm test --coverage
 
   e2e-tests:
     name: E2E Tests (Playwright)
