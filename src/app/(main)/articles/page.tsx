@@ -4,7 +4,11 @@ import useSWR from "swr";
 import Link from "next/link";
 import { Article } from "@/app/lib/definitions";
 
-const fetcher = (url: string) => fetch(url).then((r) => r.json());
+const fetcher = (url: string) =>
+  fetch(url).then((r) => {
+    if (!r.ok) throw new Error(`API error: ${r.status}`);
+    return r.json();
+  });
 
 export default function ArticlesPage() {
   const { data: articles, error, isLoading } = useSWR<Article[]>(

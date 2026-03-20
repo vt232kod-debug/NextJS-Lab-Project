@@ -42,3 +42,14 @@ next-env.d.ts
 
 # local report file (content moved to README.md)
 Скрінти*
+
+.claude/
+playwright-report/
+test-results/
+.next/
+.swc/
+coverage/
+out/
+node_modules/
+.env.local
+*.tsbuildinfo
